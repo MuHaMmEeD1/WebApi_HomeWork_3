@@ -32,7 +32,9 @@ builder.Services.AddIdentity<CustomIdentityUser, CustomIdentityRole>()
 
 var key = Encoding.UTF8.GetBytes(builder.Configuration.GetSection("AppSettings:Key").Value);
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+
+
+builder.Services.AddAuthentication(opt => opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
     {
