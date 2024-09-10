@@ -1,0 +1,6 @@
+@WebApi_HomeWork_3_HostAddress = http://localhost:5036
+
+GET {{WebApi_HomeWork_3_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
